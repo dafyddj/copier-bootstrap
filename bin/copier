@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Check if the copier binary exists
+if ! [ -x "$(command -v copier)" ]; then
+  echo "Error: 'copier' binary not found or not executable"
+  exit 1
+fi
+
+# Call the copier binary with all command line arguments
+copier "$@"

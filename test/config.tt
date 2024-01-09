@@ -1,0 +1,16 @@
+# Full path to the System Under Test (or Java Main Class name)
+executable:${TEXTTEST_ROOT}/../bin/copier
+
+# Naming scheme to use for files for stdin,stdout and stderr
+filename_convention_scheme:standard
+
+# Expanded name to use for application
+full_name:Copier Test
+
+create_catalogues:true
+discard_file:stderr
+
+[collate_file]
+config_tt:test/config.tt
+main_yml:.github/workflows/main.yml
+pre-commit_yaml:.pre-commit-config.yaml

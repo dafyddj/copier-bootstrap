@@ -1,0 +1,1 @@
+copy --vcs-ref=HEAD
