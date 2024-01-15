@@ -1,0 +1,13 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "git-submodules",
+  ],
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(fix)",
+  ],
+  "git-submodules": {
+    "enabled": true
+  }
+}
