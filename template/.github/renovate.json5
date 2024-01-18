@@ -7,10 +7,10 @@
     "config:recommended",
     ":semanticCommitTypeAll(fix)",
   ],
-  # there are two match strings to match the two conditions
-  #   * no update needed
-  #   * update needed but not yet applied
-  # renovate needs to be able to match both conditions for PRs to work properly
+  // there are two match strings to match the two conditions
+  //   * no update needed
+  //   * update needed but not yet applied
+  // renovate needs to be able to match both conditions for PRs to work properly
   "customManagers": [
     {
       "customType": "regex",
