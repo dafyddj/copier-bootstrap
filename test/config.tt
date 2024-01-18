@@ -16,3 +16,4 @@ config_tt:test/config.tt
 copier_yaml:copier.yaml
 main_yml:.github/workflows/main.yml
 pre-commit_yaml:.pre-commit-config.yaml
+renovate_json5:.github/renovate.json5
