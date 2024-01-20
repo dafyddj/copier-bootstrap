@@ -11,6 +11,8 @@ The following new files/directories were created:
 ----copier.yaml
 ----template
 --------{{ _copier_conf.answers_file }}.copier-jinja
+--------.github
+------------renovate.json5
 ----test
 --------config.tt
 --------options.tt

@@ -17,3 +17,4 @@ copier_yaml:copier.yaml
 main_yml:.github/workflows/main.yml
 pre-commit_yaml:.pre-commit-config.yaml
 renovate_json5:.github/renovate.json5
+template_renovate_json5:template/.github/renovate.json5
