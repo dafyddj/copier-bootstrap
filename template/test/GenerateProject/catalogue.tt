@@ -1,3 +1,5 @@
 The following new files/directories were created:
 <Test Directory>
 ----.copier-answers.yml
+----.github
+--------renovate.json5
