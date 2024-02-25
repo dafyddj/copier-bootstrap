@@ -8,28 +8,22 @@
     "config:recommended",
     ":semanticCommitTypeAll(fix)",
   ],
-  // There are two regex custom managers needed to match the two conditions
-  //   * no update currently needed
-  //   * update needed but not yet applied
+  // `copier` template updates
+  // There are two conditions that we need to account for
+  //   * a "clean" `.copier-answers.yml` file
+  //   * update needed but not yet applied (and further updates could appear in this condition)
   // `renovate` needs to be able to match both conditions for PRs to work properly
+  // We make a hacky use of the otherwise unused field `currentDigest` to hold the current copier template version
   "customManagers": [
     {
       "customType": "regex",
       "fileMatch": ["^.copier-answers.yml$"],
       "matchStrings": [
         "_commit: (?<currentValue>\\S+)\\n_src_path: gh:(?<depName>\\S+)\\n",
+        "_commit: (?<currentDigest>\\S+) # __copier_update_needed (?<currentValue>\\S+)\\n_src_path: gh:(?<depName>\\S+)\\n",
       ],
       "datasourceTemplate": "github-tags",
-      "autoReplaceStringTemplate": "_commit: {{{currentValue}}} # __copier_update_needed {{{newValue}}}\n_src_path: gh:{{{depName}}}\n",
-    },
-    {
-      "customType": "regex",
-      "fileMatch": ["^.copier-answers.yml$"],
-      "matchStrings": [
-        "# __copier_update_needed (?<currentValue>\\S+)\\n_src_path: gh:(?<depName>\\S+)\\n",
-      ],
-      "datasourceTemplate": "github-tags",
-      "autoReplaceStringTemplate": "# __copier_update_needed {{{newValue}}}\n_src_path: gh:{{{depName}}}\n",
+      "autoReplaceStringTemplate": "_commit: {{#if currentDigest}}{{{currentDigest}}}{{else}}{{{currentValue}}}{{/if}} # __copier_update_needed {{{newValue}}}\n_src_path: gh:{{{depName}}}\n",
     },
   ],
   "git-submodules": {
