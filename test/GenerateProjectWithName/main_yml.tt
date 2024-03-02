@@ -1,0 +1,57 @@
+name: Test & release
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+
+jobs:
+  pre-commit:
+    name: Run `pre-commit`
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+    - uses: actions/setup-python@0a5c61591373683505ea898e09a3ea4f39ef2b9c # v5.0.0
+    - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
+  test:
+    name: Run approval tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0      # `copier` prefers full-history clones
+          submodules: true
+      - name: Debug on runner (When re-run with "Enable debug logging" checked)
+        if: runner.debug
+        uses: mxschmitt/action-tmate@a283f9441d2d96eb62436dc46d7014f5d357ac22 # v3.17
+        with:
+          detached: true
+      - name: Install test dependencies
+        run: |
+          pipx install copier
+          pipx install texttest
+      - name: Run `texttest`
+        run: texttest -b
+  results:
+    name: Collect results
+    needs:
+      - pre-commit
+      - test
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: codfish/semantic-release-action@07170c8b1613177f0f3aa4d2224e2e0933cd732c # v3.1.0
+        with:
+          plugins: |
+            [ "@semantic-release/commit-analyzer",
+              "@semantic-release/release-notes-generator",
+              "@semantic-release/github"
+            ]
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

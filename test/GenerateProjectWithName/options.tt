@@ -1,0 +1,1 @@
+-d template_name=copier-template $TEXTTEST_ROOT/.. .
