@@ -1,1 +1,1 @@
-$TEXTTEST_ROOT/.. .
+-d template_name=base-bootstrap $TEXTTEST_ROOT/.. .

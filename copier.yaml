@@ -1,2 +1,7 @@
 _subdirectory: template
 _templates_suffix: .bootstrap-jinja
+
+# Questions
+template_name:
+  type: str
+  help: What is your template name? (e.g. the template's repository name)

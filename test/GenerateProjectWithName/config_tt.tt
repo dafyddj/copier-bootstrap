@@ -5,7 +5,16 @@ executable:${TEXTTEST_ROOT}/../bin/copier
 filename_convention_scheme:standard
 
 # Expanded name to use for application
-full_name:Copier Test
+full_name:copier-template
 
 create_catalogues:true
-discard_file:stderr
+
+[run_dependent_text]
+stderr:Copying from template version
+stderr:DirtyLocalWarning{LINES 2}
+stderr:No git tags found in template; using HEAD as ref
+stderr:create [
+stderr:conflict [
+stderr:identical [
+stderr:overwrite [
+stderr:skip [
