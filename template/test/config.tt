@@ -8,4 +8,13 @@ filename_convention_scheme:standard
 full_name:Copier Test
 
 create_catalogues:true
-discard_file:stderr
+
+[run_dependent_text]
+stderr:Copying from template version
+stderr:DirtyLocalWarning{LINES 2}
+stderr:No git tags found in template; using HEAD as ref
+stderr:create [
+stderr:conflict [
+stderr:identical [
+stderr:overwrite [
+stderr:skip [
