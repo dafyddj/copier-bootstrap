@@ -5,10 +5,9 @@ executable:${TEXTTEST_ROOT}/../bin/copier
 filename_convention_scheme:standard
 
 # Expanded name to use for application
-full_name:Copier Test
+full_name:copier-bootstrap
 
 create_catalogues:true
-discard_file:stderr
 
 [collate_file]
 catalogue_tt:test/GenerateProject/catalogue.tt
@@ -19,3 +18,13 @@ options_tt:test/options.tt
 pre-commit_yaml:.pre-commit-config.yaml
 renovate_json5:.github/renovate.json5
 template_renovate_json5:template/.github/renovate.json5
+
+[run_dependent_text]
+stderr:Copying from template version
+stderr:DirtyLocalWarning{LINES 2}
+stderr:No git tags found in template; using HEAD as ref
+stderr:create
+stderr:conflict
+stderr:identical
+stderr:overwrite
+stderr:skip
