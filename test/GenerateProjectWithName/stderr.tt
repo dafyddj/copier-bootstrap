@@ -1,0 +1,26 @@
+/opt/homebrew/Cellar/copier/9.1.1/libexec/lib/python3.12/site-packages/copier/vcs.py:200: DirtyLocalWarning: Dirty template changes included automatically.
+  warn(
+
+Copying from template version 2.0.1.post2.dev0+6ad874d
+[36m identical[39m[0m  .
+[32m[1m    create[39m[0m  test
+[32m[1m    create[39m[0m  test/testsuite.tt
+[32m[1m    create[39m[0m  test/config.tt
+[32m[1m    create[39m[0m  test/GenerateProject
+[32m[1m    create[39m[0m  test/GenerateProject/catalogue.tt
+[32m[1m    create[39m[0m  test/GenerateProject/stdout.tt
+[32m[1m    create[39m[0m  test/GenerateProject/options.tt
+[32m[1m    create[39m[0m  test/options.tt
+[32m[1m    create[39m[0m  bin
+[32m[1m    create[39m[0m  bin/copier
+[32m[1m    create[39m[0m  .pre-commit-config.yaml
+[32m[1m    create[39m[0m  copier.yaml
+[32m[1m    create[39m[0m  template
+[32m[1m    create[39m[0m  template/{{ _copier_conf.answers_file }}.copier-jinja
+[32m[1m    create[39m[0m  template/.github
+[32m[1m    create[39m[0m  template/.github/renovate.json5
+[32m[1m    create[39m[0m  .copier-answers.yml
+[32m[1m    create[39m[0m  .github
+[32m[1m    create[39m[0m  .github/renovate.json5
+[32m[1m    create[39m[0m  .github/workflows
+[32m[1m    create[39m[0m  .github/workflows/main.yml
