@@ -6,7 +6,6 @@
   ],
   "extends": [
     "config:recommended",
-    ":semanticCommitTypeAll(fix)",
   ],
   // `copier` template updates
   // There are two conditions that we need to account for
