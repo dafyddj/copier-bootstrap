@@ -1,4 +1,4 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v2.0.3
+_commit: v2.0.3 # __copier_update_needed v2.0.4
 _src_path: gh:dafyddj/copier-bootstrap
 template_name: copier-bootstrap
