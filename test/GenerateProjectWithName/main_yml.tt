@@ -14,8 +14,8 @@ jobs:
     name: Run `pre-commit`
     runs-on: ubuntu-latest
     env:
-      # renovate: datasource=github-tags depName=python/cpython
-      PYTHON_VERSION: 3.12.2
+      # renovate: datasource=github-releases depName=actions/python-versions extractVersion=^(?<version>\S+)-\d+$
+      PYTHON_VERSION: 3.12.3
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - uses: actions/setup-python@82c7e631bb3cdc910f68e0081d67478d79c6982d # v5.1.0
@@ -32,7 +32,7 @@ jobs:
           submodules: true
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
         if: runner.debug
-        uses: mxschmitt/action-tmate@a283f9441d2d96eb62436dc46d7014f5d357ac22 # v3.17
+        uses: mxschmitt/action-tmate@b3db6e16e597d92037c8647e54acc5d2b1b48dee # v3.18
         with:
           detached: true
       - name: Install test dependencies
@@ -51,7 +51,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: codfish/semantic-release-action@f93cffb9a0c7449d938e275a7a2db12256de2a1c # v3.2.0
+      - uses: codfish/semantic-release-action@b0e57c976bf8f74b2454f59a30e4a1b5f11727b4 # v3.3.0
         with:
           plugins: |
             [ "@semantic-release/commit-analyzer",
