@@ -28,4 +28,11 @@
   "git-submodules": {
     "enabled": true
   },
+  "packageRules": [
+    {
+      "matchManagers": ["git-submodules"],
+      "automerge": true,
+    },
+  ],
+  "platformAutomerge": false,
 }
