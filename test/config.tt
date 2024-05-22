@@ -13,11 +13,17 @@ create_catalogues:true
 catalogue_tt:test/GenerateProject/catalogue.tt
 config_tt:test/config.tt
 copier_yaml:copier.yaml
+copier-renovate_json5:.github/copier-renovate.json5
+entrypoint_sh:.github/entrypoint.sh
 main_yml:.github/workflows/main.yml
 options_tt:test/options.tt
 pre-commit_yaml:.pre-commit-config.yaml
 renovate_json5:.github/renovate.json5
+renovate_yml:.github/workflows/renovate.yml
+template_copier-renovate_json5:template/.github/copier-renovate.json5
+template_entrypoint_sh:template/.github/entrypoint.sh
 template_renovate_json5:template/.github/renovate.json5
+template_renovate_yml:template/.github/workflows/renovate.yml
 
 [run_dependent_text]
 stderr:Copying from template version
