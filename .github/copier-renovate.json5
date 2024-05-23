@@ -1,0 +1,33 @@
+{
+  "enabledManagers": [
+    "custom.regex",
+  ],
+  "extends": [
+    ":dependencyDashboard",
+  ],
+  "allowedPostUpgradeCommands": [
+    "^git stash$",
+    "^copier update",
+  ],
+  "branchPrefix": "copier-renovate/",
+  "requireConfig": "ignored",
+  "customManagers": [
+    {
+      "customType": "regex",
+      "fileMatch": ["^.copier-answers.yml$"],
+      "matchStrings": [
+        "_commit: (?<currentValue>\\S+) # __copier_update_available \\S+\\n_src_path: gh:(?<depName>\\S+)\\n",
+        "_commit: (?<currentDigest>\\S+) # __copier_update_pending (?<currentValue>\\S+)\\n_src_path: gh:(?<depName>\\S+)\\n",
+      ],
+      "autoReplaceStringTemplate": "_commit: {{#if currentDigest}}{{{currentDigest}}}{{else}}{{{currentValue}}}{{/if}} # __copier_update_pending {{{newValue}}}\n_src_path: gh:{{{depName}}}\n",
+      "datasourceTemplate": "github-tags",
+    },
+  ],
+  "postUpgradeTasks": {
+    "commands": [
+      "git stash",
+      "copier update --skip-answered --vcs-ref {{{newVersion}}}",
+    ],
+    "executionMode": "update",
+  },
+}
