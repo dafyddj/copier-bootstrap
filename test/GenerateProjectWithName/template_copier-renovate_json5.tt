@@ -2,9 +2,6 @@
   "enabledManagers": [
     "custom.regex",
   ],
-  "extends": [
-    ":dependencyDashboard",
-  ],
   "allowedPostUpgradeCommands": [
     "^git stash$",
     "^copier update",
