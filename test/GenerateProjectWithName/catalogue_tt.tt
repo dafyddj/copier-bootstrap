@@ -2,8 +2,4 @@ The following new files/directories were created:
 <Test Directory>
 ----.copier-answers.yml
 ----.github
---------copier-renovate.json5
---------entrypoint.sh
 --------renovate.json5
---------workflows
-------------renovate.yml
