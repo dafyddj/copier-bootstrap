@@ -2,12 +2,9 @@ The following new files/directories were created:
 <Test Directory>
 ----.copier-answers.yml
 ----.github
---------copier-renovate.json5
---------entrypoint.sh
 --------renovate.json5
 --------workflows
 ------------main.yml
-------------renovate.yml
 ----.pre-commit-config.yaml
 ----bin
 --------copier
@@ -15,11 +12,7 @@ The following new files/directories were created:
 ----template
 --------{{ _copier_conf.answers_file }}.copier-jinja
 --------.github
-------------copier-renovate.json5
-------------entrypoint.sh
 ------------renovate.json5
-------------workflows
-----------------renovate.yml
 ----test
 --------config.tt
 --------options.tt
