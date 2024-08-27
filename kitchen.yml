@@ -1,0 +1,35 @@
+---
+driver:
+  name: docker
+  provision_command: |
+    : \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+       git \
+    && python3 -m pip install --root-user-action ignore \
+       pipx \
+    && pipx install --global copier \
+    && pipx install --global texttest \
+    && :
+
+provisioner:
+  name: shell
+  command: |
+    git config --global --add safe.directory /template
+    git config --global user.name 'Copier'
+    git config --global user.email 'copier@example.com'
+
+    copier copy --vcs-ref HEAD -d template_name=copier-temp01 /template .
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: test
+    driver:
+      image: python:3.12-slim
+      platform: debian
+      volume:
+        - .:/template
+
+suites:
+  - name: default

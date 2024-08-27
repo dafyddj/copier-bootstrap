@@ -20,4 +20,5 @@ The following new files/directories were created:
 --------GenerateProject
 ------------catalogue.tt
 ------------options.tt
+------------stderr.tt
 ------------stdout.tt
