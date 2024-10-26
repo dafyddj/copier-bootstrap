@@ -28,8 +28,8 @@ jobs:
       # renovate: datasource=custom.python-versions depName=actions/python-versions versioning=pep440
       PYTHON_VERSION: 3.13.0
     steps:
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
-      - uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
@@ -40,17 +40,17 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.3.1
+      COPIER_VERSION: 9.4.1
       # renovate: datasource=pypi depName=texttest
-      TEXTTEST_VERSION: 4.3.1
+      TEXTTEST_VERSION: 4.4.0.1
     steps:
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0      # `copier` prefers full-history clones
           submodules: true
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
         if: runner.debug
-        uses: mxschmitt/action-tmate@b3db6e16e597d92037c8647e54acc5d2b1b48dee # v3.18
+        uses: mxschmitt/action-tmate@e5c7151931ca95bad1c6f4190c730ecf8c7dde48 # v3.19
         with:
           detached: true
       - name: Install test dependencies
@@ -72,7 +72,7 @@ jobs:
         with:
           ignore: Collect results
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871 # v4.2.1
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: codfish/semantic-release-action@9a999e0cdb207de2c9d9d4276860435727818989 # v3.4.1
         with:
           plugins: |
