@@ -40,7 +40,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.3.1
+      COPIER_VERSION: 9.4.1
       # renovate: datasource=pypi depName=texttest
       TEXTTEST_VERSION: 4.3.1
     steps:
