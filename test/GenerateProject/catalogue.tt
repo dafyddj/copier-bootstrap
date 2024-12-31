@@ -4,7 +4,6 @@ The following new files/directories were created:
 ----.github
 --------renovate.json5
 --------settings.yml
-<<<<<<< before updating
 --------workflows
 ------------main.yml
 ----.pre-commit-config.yaml
@@ -25,5 +24,3 @@ The following new files/directories were created:
 ------------options.tt
 ------------stderr.tt
 ------------stdout.tt
-=======
->>>>>>> after updating
