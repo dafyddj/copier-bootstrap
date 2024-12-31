@@ -3,6 +3,7 @@ The following new files/directories were created:
 ----.copier-answers.yml
 ----.github
 --------renovate.json5
+--------settings.yml
 --------workflows
 ------------main.yml
 ----.pre-commit-config.yaml
@@ -13,6 +14,7 @@ The following new files/directories were created:
 --------{{ _copier_conf.answers_file }}.copier-jinja
 --------.github
 ------------renovate.json5
+------------settings.yml
 ----test
 --------config.tt
 --------options.tt

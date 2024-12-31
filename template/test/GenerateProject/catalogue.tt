@@ -3,3 +3,4 @@ The following new files/directories were created:
 ----.copier-answers.yml
 ----.github
 --------renovate.json5
+--------settings.yml
