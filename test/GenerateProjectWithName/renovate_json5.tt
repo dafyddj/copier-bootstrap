@@ -13,12 +13,16 @@
   },
   packageRules: [
     {
-      matchFileNames: ['template/**'],
+      matchFileNames: [
+        'template/**'
+      ],
       semanticCommitType: 'fix',
     },
     {
       automerge: true,
-      matchManagers: ['git-submodules'],
+      matchManagers: [
+        'git-submodules'
+      ],
     },
   ],
 }
