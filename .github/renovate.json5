@@ -1,24 +1,28 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "enabledManagers": [
-    "copier",
-    "git-submodules",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  enabledManagers: [
+    'copier',
+    'git-submodules',
   ],
-  "extends": [
-    "config:recommended",
+  extends: [
+    'config:recommended',
   ],
-  "automergeStrategy": "merge-commit",
-  "git-submodules": {
-    "enabled": true
+  automergeStrategy: 'merge-commit',
+  'git-submodules': {
+    'enabled': true
   },
-  "packageRules": [
+  packageRules: [
     {
-      "matchFileNames": ["template/**"],
-      "semanticCommitType": "fix",
+      matchFileNames: [
+        'template/**'
+      ],
+      semanticCommitType: 'fix',
     },
     {
-      "matchManagers": ["git-submodules"],
-      "automerge": true,
+      automerge: true,
+      matchManagers: [
+        'git-submodules'
+      ],
     },
   ],
 }
