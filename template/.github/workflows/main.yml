@@ -30,7 +30,7 @@ jobs:
       PYTHON_VERSION: 3.13.3
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: actions/setup-python@8d9ed9ac5c53483de85588cdf95a591a75ab9f55 # v5.5.0
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
@@ -42,7 +42,7 @@ jobs:
     timeout-minutes: 5
     env:
       # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.6.0
+      COPIER_VERSION: 9.7.1
       # renovate: datasource=pypi depName=texttest
       TEXTTEST_VERSION: 4.4.3.1
     steps:
@@ -52,7 +52,7 @@ jobs:
           submodules: true
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
         if: runner.debug
-        uses: mxschmitt/action-tmate@e5c7151931ca95bad1c6f4190c730ecf8c7dde48 # v3.19
+        uses: mxschmitt/action-tmate@7b6a61a73bbb9793cb80ad69b8dd8ac19261834c # v3.22
         with:
           detached: true
       - name: Install test dependencies
