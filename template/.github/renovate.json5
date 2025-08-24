@@ -1,1 +1,22 @@
-../template/.github/renovate.json5
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  enabledManagers: [
+    'copier',
+    'git-submodules',
+  ],
+  extends: [
+    'github>techneg-it/.github',
+    'github>techneg-it/.github:copier',
+  ],
+  'git-submodules': {
+    'enabled': true,
+  },
+  packageRules: [
+    {
+      automerge: true,
+      matchManagers: [
+        'git-submodules',
+      ],
+    },
+  ],
+}
