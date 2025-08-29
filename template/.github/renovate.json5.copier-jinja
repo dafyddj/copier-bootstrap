@@ -1,7 +1,0 @@
-{
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: [
-    'github>techneg-it/.github',
-    'github>techneg-it/.github:copier',
-  ],
-}
