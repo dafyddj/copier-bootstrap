@@ -79,8 +79,8 @@ jobs:
         with:
           ignore: Collect results
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: codfish/semantic-release-action@b621d34fabe0940f031e89b6ebfea28322892a10 # v3.5.0
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: codfish/semantic-release-action@22ce451ffd02a9ee2c4bfd126d028e4bd655770e # v4.0.0
         with:
           plugins: |
             [ "@semantic-release/commit-analyzer",
