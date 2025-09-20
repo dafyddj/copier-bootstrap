@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
@@ -43,15 +43,15 @@ jobs:
     timeout-minutes: 5
     env:
       # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.9.1
+      COPIER_VERSION: 9.10.2
       # renovate: datasource=pypi depName=texttest
       TEXTTEST_VERSION: 4.4.4
     steps:
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           fetch-depth: 0      # `copier` prefers full-history clones
           submodules: true
-      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
@@ -79,7 +79,7 @@ jobs:
         with:
           ignore: Collect results
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - uses: codfish/semantic-release-action@22ce451ffd02a9ee2c4bfd126d028e4bd655770e # v4.0.0
         with:
           plugins: |
