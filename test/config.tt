@@ -21,6 +21,7 @@ stderr_tt:test/GenerateProject/stderr.tt
 template_renovate_json5:template/.github/renovate.json5.copier-jinja
 
 [run_dependent_text]
+pre-commit_yaml:(rev:) \S+{REPLACE \1 version}
 stderr:Copying from template version
 stderr:DirtyLocalWarning{LINES 2}
 stderr:No git tags found in template; using HEAD as ref
