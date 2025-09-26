@@ -1,3 +1,4 @@
+_envops: {'trim_blocks': true}
 _subdirectory: template
 _templates_suffix: .bootstrap-jinja
 
