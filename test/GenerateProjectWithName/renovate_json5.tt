@@ -3,6 +3,7 @@
   extends: [
     'github>techneg-it/.github',
     'github>techneg-it/.github:copier-new',
+    'github>techneg-it/.github:copier-template',
     'github>techneg-it/.github:git-submodules',
     'github>techneg-it/.github:github-actions',
     'github>techneg-it/.github:pre-commit',
