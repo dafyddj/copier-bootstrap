@@ -80,7 +80,7 @@ jobs:
           ignore: Collect results
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-      - uses: codfish/semantic-release-action@22ce451ffd02a9ee2c4bfd126d028e4bd655770e # v4.0.0
+      - uses: codfish/semantic-release-action@6c65402abb31a48c3f7396d7d099da015be67c2b # v4.0.1
         with:
           plugins: |
             [ "@semantic-release/commit-analyzer",
