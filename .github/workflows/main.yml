@@ -11,7 +11,7 @@ concurrency:
 
 env:
   # renovate: datasource=custom.python-versions depName=actions/python-versions versioning=pep440
-  PYTHON_VERSION: 3.13.7
+  PYTHON_VERSION: 3.13.8
 
 jobs:
   should-run:
