@@ -43,7 +43,7 @@ jobs:
     timeout-minutes: 5
     env:
       # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.10.3
+      COPIER_VERSION: 9.11.0
       # renovate: datasource=pypi depName=texttest
       TEXTTEST_VERSION: 4.4.5
     steps:
