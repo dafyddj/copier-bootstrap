@@ -22,6 +22,7 @@ template_renovate_json5:template/.github/renovate.json5.copier-jinja
 
 [run_dependent_text]
 main_yml:([A-Za-z0-9_]+?_VERSION:) \S+{REPLACE \1 version}
+main_yml:([A-Za-z0-9_]+?-version:) \S+{REPLACE \1 version}
 main_yml:(-? uses: [\w-]+\/[.\w-]+)@.+${REPLACE \1@version}
 pre-commit_yaml:(rev:) \S+{REPLACE \1 version}
 stderr:Copying from template version
