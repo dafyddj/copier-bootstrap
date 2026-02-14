@@ -11,7 +11,7 @@ Assuming the requirements are installed here is a quick example of how this temp
 gh repo create copier-my-template --public --license apache-2.0 --clone
 cd copier-my-template
 git switch -c chore/bootstrap
-copier copy gh:dafyddj/copier-bootstrap .
+copier copy https://github.com/dafyddj/copier-bootstrap .
 pre-commit install
 texttest -b
 git add .
