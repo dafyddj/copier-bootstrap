@@ -24,6 +24,7 @@ template_renovate_json5:template/.github/renovate.json5.copier-jinja
 main_yml:([A-Za-z0-9_]+?_VERSION:) \S+{REPLACE \1 version}
 main_yml:([A-Za-z0-9_]+?-version:) \S+{REPLACE \1 version}
 main_yml:(-? uses: [\w-]+\/[.\w-]+)@.+${REPLACE \1@version}
+main_yml:(runs-on: ubuntu-)[\d]{2}\.[\d]{2}${REPLACE \1version}
 pre-commit_yaml:(rev:) \S+{REPLACE \1 version}
 stderr:Copying from template version
 stderr:DirtyLocalWarning{LINES 2}
