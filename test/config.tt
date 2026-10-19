@@ -14,6 +14,7 @@ catalogue_tt:test/GenerateProject/catalogue.tt
 config_tt:test/config.tt
 copier_yaml:copier.yaml
 main_yml:.github/workflows/main.yml
+mise_toml:mise.toml
 options_tt:test/options.tt
 pre-commit_yaml:.pre-commit-config.yaml
 pyproject_toml:pyproject.toml
