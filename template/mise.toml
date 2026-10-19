@@ -1,0 +1,6 @@
+[tools]
+python = "3.14.8"
+uv = "0.13.1"
+
+[settings]
+python.uv_venv_auto = "create|source"
