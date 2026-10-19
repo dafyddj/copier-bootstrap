@@ -10,6 +10,7 @@ The following new files/directories were created:
 ----bin
 --------copier
 ----copier.yaml
+----pyproject.toml
 ----template
 --------{{ _copier_conf.answers_file }}.copier-jinja
 --------.github
@@ -24,3 +25,4 @@ The following new files/directories were created:
 ------------options.tt
 ------------stderr.tt
 ------------stdout.tt
+----uv.lock
