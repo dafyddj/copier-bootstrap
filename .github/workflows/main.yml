@@ -34,30 +34,37 @@ jobs:
     if: fromJSON(needs.should-run.outputs.should-run)
     runs-on: ubuntu-26.04
     timeout-minutes: 5
+<<<<<<< before updating
     env:
       # renovate: datasource=pypi depName=copier
       COPIER_VERSION: 9.19.1
       # renovate: datasource=pypi depName=texttest
       TEXTTEST_VERSION: 4.4.7
+=======
+>>>>>>> after updating
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0      # `copier` prefers full-history clones
           submodules: true
+<<<<<<< before updating
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
         if: runner.debug
         uses: mxschmitt/action-tmate@35b54afac29c97fb54faba5b513f8fbd1882f113 # v3.24
+=======
+      - uses: jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
+      - name: Debug on runner (When re-run with "Enable debug logging" checked)
+        if: runner.debug
+        uses: owenthereal/action-upterm@b9dfa526f890bbd5162d781f8d9c69b97731d73d # v2.7.0
+>>>>>>> after updating
         with:
           detached: true
-      - name: Install test dependencies
-        run: |
-          pipx install --python $(which python) copier==$COPIER_VERSION
-          pipx install --python $(which python) texttest==$TEXTTEST_VERSION
+          limit-access-to-actor: true
       - name: Run `texttest`
-        run: texttest -b
+        run: uv run texttest -b
   results:
     name: Collect results
     permissions:
