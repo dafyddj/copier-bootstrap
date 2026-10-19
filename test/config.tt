@@ -16,9 +16,11 @@ copier_yaml:copier.yaml
 main_yml:.github/workflows/main.yml
 options_tt:test/options.tt
 pre-commit_yaml:.pre-commit-config.yaml
+pyproject_toml:pyproject.toml
 renovate_json5:.github/renovate.json5
 stderr_tt:test/GenerateProject/stderr.tt
 template_renovate_json5:template/.github/renovate.json5.copier-jinja
+uv_lock:uv.lock
 
 [run_dependent_text]
 main_yml:([A-Za-z0-9_]+?_VERSION:) \S+{REPLACE \1 version}
