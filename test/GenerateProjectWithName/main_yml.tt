@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: j178/prek-action@4e14d07f9231acabce116ccfca13b13dd9755ece # v3.0.0
   test:
     name: Run approval tests
@@ -34,30 +34,20 @@ jobs:
     if: fromJSON(needs.should-run.outputs.should-run)
     runs-on: ubuntu-24.04
     timeout-minutes: 5
-    env:
-      # renovate: datasource=pypi depName=copier
-      COPIER_VERSION: 9.10.2
-      # renovate: datasource=pypi depName=texttest
-      TEXTTEST_VERSION: 4.4.4
     steps:
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0      # `copier` prefers full-history clones
           submodules: true
-      - uses: actions/setup-python@e797f83bcb11b83ae66e0230d6156d7c80228e7c # v6.0.0
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
+      - uses: jdx/mise-action@9b200bcecbfd6303e69a4a261b2e09e3757440a7 # v5.2.0
       - name: Debug on runner (When re-run with "Enable debug logging" checked)
         if: runner.debug
-        uses: mxschmitt/action-tmate@7b6a61a73bbb9793cb80ad69b8dd8ac19261834c # v3.22
+        uses: owenthereal/action-upterm@b9dfa526f890bbd5162d781f8d9c69b97731d73d # v2.7.0
         with:
           detached: true
-      - name: Install test dependencies
-        run: |
-          pipx install --python $(which python) copier==$COPIER_VERSION
-          pipx install --python $(which python) texttest==$TEXTTEST_VERSION
+          limit-access-to-actor: true
       - name: Run `texttest`
-        run: texttest -b
+        run: uv run texttest -b
   results:
     name: Collect results
     permissions:
@@ -72,7 +62,7 @@ jobs:
         with:
           ignore: Collect results
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: docker://ghcr.io/codfish/semantic-release-action@sha256:c6a4e05d93f73f2870887434c1286df7a23a55770be16cb826b6e2432f92e650 # v5.0.0
         with:
           plugins: |
