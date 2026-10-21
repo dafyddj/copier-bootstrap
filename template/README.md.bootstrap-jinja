@@ -1,6 +1,6 @@
 # {{ template_name }}
 
-This is a `copier` template for generating particular types of projects or parts of projects.
+This is a [copier](https://github.com/copier-org/copier) template for generating particular types of projects or parts of projects.
 
 ## Quickstart
 
@@ -23,12 +23,13 @@ gh pr --merge -dm
 
 Install dependencies using `pip`, [pipx](https://pipx.pypa.io/stable/) or [Homebrew/Linuxbrew](https://brew.sh/).
 
+For example:
+
 ```
 pip install --user pipx
 pipx ensurepath
 
-pipx install copier
-pipx install pre-commit
+pipx install copier pre-commit
 ```
 
 or
@@ -37,4 +38,4 @@ or
 brew install copier pre-commit
 ```
 
-This is optional but the official **GitHub** [CLI](https://cli.github.com/) tool can ease development at the command line.
+This is optional but the official **GitHub** [CLI](https://cli.github.com/) tool (`gh`) can ease working with GitHub using the command line.
