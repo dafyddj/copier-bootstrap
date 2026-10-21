@@ -18,6 +18,7 @@ mise_toml:mise.toml
 options_tt:test/options.tt
 pre-commit_yaml:.pre-commit-config.yaml
 pyproject_toml:pyproject.toml
+readme_md:README.md
 renovate_json5:.github/renovate.json5
 stderr_tt:test/GenerateProject/stderr.tt
 template_renovate_json5:template/.github/renovate.json5.copier-jinja
