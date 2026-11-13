@@ -12,25 +12,6 @@ wheels = [
 ]
 
 [[package]]
-name = "copier-bootstrap"
-version = "0.0.0"
-source = { virtual = "." }
-
-[package.dev-dependencies]
-dev = [
-    { name = "copier" },
-    { name = "texttest" },
-]
-
-[package.metadata]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "copier", specifier = "==9.19.1" },
-    { name = "texttest", specifier = "==4.4.7" },
-]
-
-[[package]]
 name = "colorama"
 version = "0.4.6"
 source = { registry = "https://pypi.org/simple" }
@@ -62,6 +43,25 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/fb/16/c299f48d12a97c1fc51294cbb7874ad1ba701e8383559c85c7c0edfe7a28/copier-9.19.1.tar.gz", hash = "sha256:3fe48c38a290c90dfa67cfc7811bc3f576c03f59d3a1e6a09a8d46c2f0403988", size = 679744, upload-time = "2026-10-13T15:04:17.725Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2c/d7/8b9d508dda3b1ca828fb7e5ad26ca1bcb18b0b440f56c73625891ceedc7b/copier-9.19.1-py3-none-any.whl", hash = "sha256:1779270f5082b168982a4ec356afbca24545b3cf1ebb587d1dff843bb5bc9858", size = 68906, upload-time = "2026-10-13T15:04:16.074Z" },
+]
+
+[[package]]
+name = "copier-bootstrap"
+version = "0.0.0"
+source = { virtual = "." }
+
+[package.dev-dependencies]
+dev = [
+    { name = "copier" },
+    { name = "texttest" },
+]
+
+[package.metadata]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "copier", specifier = "==9.19.1" },
+    { name = "texttest", specifier = "==4.5.0" },
 ]
 
 [[package]]
@@ -550,14 +550,14 @@ wheels = [
 
 [[package]]
 name = "texttest"
-version = "4.4.7"
+version = "4.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "psutil" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/30/11/5b6c9ce24c1b23effa0db201babf7610f15a98ecf6a7c3a00fa68db7a1fe/texttest-4.4.7.tar.gz", hash = "sha256:448d7f2d5c2883841df421d84b325b90067c0d385c4d6a700a6fd1cbe0972318", size = 1811543, upload-time = "2026-06-30T09:36:26.382Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c4/9c/cadeaa5532612a66269139e4826cbbbd9c646c228ec4caf2efb0c35591d3/texttest-4.5.0.tar.gz", hash = "sha256:1b8f5c4b456a6a2decb5a3e68e976768d1b37201893251ec11f332a0b1767e31", size = 3691037, upload-time = "2026-11-11T14:19:58.075Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c3/a3/4fdbd3df2e624c870677c10e70eece45141a89e3f92aa0ba58213c225441/texttest-4.4.7-py3-none-any.whl", hash = "sha256:b34c9363077531efc1ae80496d80dd3f08615189ad4ffa92ca786bcabd9bf5ca", size = 2045301, upload-time = "2026-06-30T09:36:24.799Z" },
+    { url = "https://files.pythonhosted.org/packages/d3/16/80350cdb66c560e0644ab7da6b88d93cc2f7a0a06b18f372023201250f9c/texttest-4.5.0-py3-none-any.whl", hash = "sha256:e328233ea93bfb0ca0d990c4240f681927ece3cb7473853c079a1eca041f19cf", size = 4258344, upload-time = "2026-11-11T14:19:56.133Z" },
 ]
 
 [[package]]
